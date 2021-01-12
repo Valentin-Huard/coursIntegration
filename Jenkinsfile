@@ -18,17 +18,17 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn compile'
+                sh 'echo mvn compile'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'echo mvn test'
             }
         }
         stage('Deploy') {​​​​
             steps {​​​​
-                sh "mvn -s /Users/valentinhuard/.m2/settings.xml deploy"
+                sh " echomvn -s /Users/valentinhuard/.m2/settings.xml deploy"
             }​​​​
         }​​​​
         stage('Release') {
