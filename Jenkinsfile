@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Deploy') {​​​​
             steps {​​​​
-                sh "mvn -s /Users/valentinhuard/.m2/settings.xml deploy"
+                sh 'mvn -s /Users/valentinhuard/.m2/settings.xml deploy'
             }​​​​
         }​​​​
         stage('Release') {
@@ -47,6 +47,8 @@ pipeline {
                 }
             }
 
-        }}}
+        }
+    }
+}
 
     
