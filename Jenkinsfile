@@ -1,3 +1,4 @@
+def pom 
 pipeline {
     agent any
     tools {
