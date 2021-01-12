@@ -21,6 +21,11 @@ pipeline {
                 sh 'mvn compile'
             }
         }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
         stage('Deploy') {​​​​
             steps {​​​​
                 sh "mvn -s /Users/valentinhuard/.m2/settings.xml deploy"
@@ -42,11 +47,6 @@ pipeline {
                 }
             }
 
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
         }}}
 
     
