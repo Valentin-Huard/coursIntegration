@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {​​​​
             steps {​​​​
             //withMaven(mavenSettingsConfig: 'maven-config', globalMavenSettingsConfig: 'global-config') {​​​​
-            sh "mvn -s /Users/valentinhuard/.m2/settings.xml deploy"
+            sh "mvn -s ./Users/valentinhuard/.m2/settings.xml deploy"
             //}​​​​
             }​​​​
         }​​​​
