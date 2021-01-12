@@ -16,10 +16,16 @@ pipeline {
                 '''
             }
         }
-        
+
         stage('Build') {
             steps {
                 sh 'mvn compile'
+            }
+        }​​​​
+    
+        stage('Test') {
+            steps {
+                sh 'mvn test'
             }
         }
 
@@ -27,12 +33,6 @@ pipeline {
             steps {​​​​
             sh 'mvn -s ./Users/valentinhuard/.m2/settings.xml deploy'
             }​​​​
-        }​​​​
-    
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
         }
     }
 }
