@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {​​​​​
+        booleanParam(name: "Perform release ?", description: '', defaultValue: false)
+    }​​​​​
     tools {
         maven 'maven'
         jdk 'JDK'
@@ -18,17 +21,17 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'echo mvn compile'
+                sh 'mvn compile'
             }
         }
         stage('Test') {
             steps {
-                sh 'echo mvn test'
+                sh 'mvn test'
             }
         }
         stage('Deploy') {​​​​
             steps {​​​​
-                sh " echomvn -s /Users/valentinhuard/.m2/settings.xml deploy"
+                sh "mvn -s /Users/valentinhuard/.m2/settings.xml deploy"
             }​​​​
         }​​​​
         stage('Release') {
